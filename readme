@@ -15,7 +15,7 @@ OR (Bashscript auto setup)
 =================================================
 Feature which havn't been implemented:
 API endpoint.
-tried to realize API endpoint via Flask Rest (),
+tried to realize API endpoint via Flask Rest,
 but encountered difficulties when tried to parse input from
 HTML to Python. Tried 3 ways: Ajax, PHP, XML. Different errors 
 occured. 
