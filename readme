@@ -1,4 +1,4 @@
-Initial command:
+Initial command (Manual setup):
 # virtualenv flaskprojectenv
 # source flaskprojectenv/bin/activate
 # export FLASK_APP=project
@@ -6,3 +6,6 @@ Initial command:
 # pip install gunicorn flask
 # flask run
 
+OR (Bashscript auto setup)
+# chmod 733 run
+# ./run
