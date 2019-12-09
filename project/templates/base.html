@@ -1,0 +1,98 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+	body {
+	  background-color: lightblue;
+	  align: center;
+	}
+	a:link {
+		background-color: transparent;
+		text-decoration: none;
+	}
+	a:hover {
+		color: red;
+		background-color: transparent;
+		text-decoration: underline;
+	}
+	th {
+		text-align: center;
+	}
+
+	</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+
+
+
+<body>
+    <section class="hero is-primary is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                        	<table style="width:20%" align="center">
+                        	
+                        	<tr>
+                        		<th>
+				                	<a href="{{ url_for('main.index') }}" class="navbar-item">
+				                        Home
+				                    </a>
+				                </th>
+                            {% if current_user.is_authenticated %}
+		                        <th>
+				                    <a href="{{ url_for('main.profile') }}" class="navbar-item">
+				                        Profile
+				                    </a>
+		                        </th>
+                            {% endif %}
+                            {% if not current_user.is_authenticated %}
+		                        <th>
+				                    <a href="{{ url_for('auth.login') }}" class="navbar-item">
+				                        Login
+				                    </a>
+		                        </th>
+				                <th>
+				                    <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+				                        Sign Up
+				                    </a>
+		                        </th>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+		                        <th>
+				                    <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+				                        Logout
+				                    </a>
+		                        </th>
+                            {% endif %}
+                        	</tr>
+                        	
+                        	</table>
+                        	
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
