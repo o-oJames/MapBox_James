@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+virtualenv flaskprojectenv
+source flaskprojectenv/bin/activate
+export FLASK_APP=project
+export FLASK_DEBUG=1
+pip install gunicorn flask
+flask run
