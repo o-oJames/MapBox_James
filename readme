@@ -1,3 +1,5 @@
+Development environment Ubuntu 16.04LTS
+=================================================
 Initial command (Manual setup):
 # virtualenv flaskprojectenv
 # source flaskprojectenv/bin/activate
